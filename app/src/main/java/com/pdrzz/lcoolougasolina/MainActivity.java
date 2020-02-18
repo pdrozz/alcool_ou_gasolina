@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText editGasolina,editAlcool;
     private Button calcular;
     private TextView resultado;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
         resultado=findViewById(R.id.txtResultado);
 
 
+
+
     }
+
+
+
 
     public void calcularPreco(View view){
         boolean camposValidados = validarCampos(editGasolina.getText().toString(),editAlcool.getText().toString());
@@ -48,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             }else{resultado.setText("Melhor Utilizar o ÁLCOOL!");}
 
         }else{
-            Toast.makeText(this,"Preencha todos os campos",Toast.LENGTH_LONG);
+            Toast.makeText(this,"Preencha todos os campos",Toast.LENGTH_LONG).show();
         }
 
     }
